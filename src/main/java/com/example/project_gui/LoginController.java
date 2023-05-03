@@ -36,7 +36,7 @@ public class LoginController {
 
     public void initialize() {
 
-        loginButton.setOnAction(e -> {
+        loginButton.setOnAction((ActionEvent e) -> {
             try {
                 handleLogin();
             } catch (IOException ex) {
@@ -54,15 +54,15 @@ public class LoginController {
         Password = passwordField.getText();
 
         char t = Library.checkPassword(Email, Password);
-        if (t == 'l') {
-            SceneSwitcher.getInstance().switchToInitialLibrarian();
+        if (t == 'L') {
+            SceneSwitcher.getInstance().switchToInitialLibrarian(new ActionEvent());
 
-        } else if (t == 'r'){
-            SceneSwitcher.getInstance().switchToInitialReader();
+        } else if (t == 'R'){
+            SceneSwitcher.getInstance().switchToInitialReader(new ActionEvent());
 
 
         } else {
-            SceneSwitcher.getInstance().switchToLogin();
+            SceneSwitcher.getInstance().switchToLogin(new ActionEvent());
 
         }
     }

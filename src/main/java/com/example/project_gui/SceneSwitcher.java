@@ -26,31 +26,38 @@ public class SceneSwitcher {
         this.stage = stage;
     }
 
-    public void switchToInitialLibrarian() {
+    public void switchToInitialLibrarian(ActionEvent event) {
         try {
             Parent LibrarianRoot = FXMLLoader.load(getClass().getResource("InitialLibrarian.fxml"));
             Scene LibrarianScene = new Scene(LibrarianRoot);
+            stage=(Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(LibrarianScene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void switchToInitialReader() {
+    public void switchToInitialReader(ActionEvent event) {
         try {
             Parent readerRoot = FXMLLoader.load(getClass().getResource("InitialReader.fxml"));
             Scene readerScene = new Scene(readerRoot);
+            stage=(Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(readerScene);
+            stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void switchToLogin() {
+    public void switchToLogin(ActionEvent event) {
         try {
             Parent loginRoot = FXMLLoader.load(getClass().getResource("Login.fxml"));
             Scene loginScene = new Scene(loginRoot);
+            stage=(Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(loginScene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
