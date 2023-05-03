@@ -64,8 +64,30 @@ public class Librarian extends Person {
 
 
 
-
     }
 
+    static public void removeUserFromQueue(int id, String name){
 
+        int bookIndex = searchBook(name);
+
+
+        if (bookIndex >= 0){
+            for (int i = 0; i < Library.books.get(bookIndex).queue.size(); i++){
+                if (id == Library.books.get(bookIndex).queue.get(i).getID()){
+                    Library.books.get(bookIndex).queue.remove(i);
+                    System.out.println("user with id"+id+" was removed from book "+name+ " queue");
+                    return;
+
+                }
+            }
+            System.out.println("user was not found in queue");
+        }
+
+
+
+
+    }
 }
+
+
+
