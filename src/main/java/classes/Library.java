@@ -39,7 +39,7 @@ public class Library {
 
     }
 
-    public char checkPassword(String email,String password){
+    public static char checkPassword(String email,String password){
         for (int i = 0; i< persons.size(); i++){
             if (persons.get(i).getEmail().equals(email) && persons.get(i).getPassword().equals(password)){
                 System.out.println("The person was found");
