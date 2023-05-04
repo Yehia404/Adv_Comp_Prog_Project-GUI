@@ -3,8 +3,8 @@ package classes;
 import java.util.ArrayList;
 
 public class Library {
-    static ArrayList<Person> persons  = new ArrayList<Person>();
-    static ArrayList<Book> books= new ArrayList<Book>();
+    public static ArrayList<Person> persons  = new ArrayList<Person>();
+    public static  ArrayList<Book> books = new ArrayList<Book>();
     public Library() {
         books.add(new Book("book1","yehia"));
         books.add(new Book("book2","marwan"));
