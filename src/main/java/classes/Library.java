@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Library {
     public static ArrayList<Person> persons  = new ArrayList<Person>();
-    public static Person loggedIn = null;
+    public static Person loggedIn;
     public static  ArrayList<Book> books = new ArrayList<Book>();
     public Library() {
         books.add(new Book("book1","yehia"));

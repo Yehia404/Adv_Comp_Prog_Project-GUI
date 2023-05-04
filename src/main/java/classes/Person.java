@@ -95,7 +95,7 @@ abstract public class Person {
 
 
     // Method checks if a certain cook is already rented or not, if rented then adds this person to a queue array, else rents book for this user
-    public static void rentBook(String name) {
+    public void rentBook(String name) {
         int i = searchBook(name);
         if (i >= 0) {
 

@@ -41,8 +41,11 @@ public class SearchBookController2 {
     public void rentBook(ActionEvent event) throws IOException{
         if (bookedLabel.getText().equals("Booked: false")){
             bookedLabel.setText("Booked: True");
+            Library.loggedIn.rentBook(bookLabel.getText().substring(11));
 
-
+        }
+        else{
+            Library.loggedIn.rentBook(bookLabel.getText().substring(11));
         }
 
 
