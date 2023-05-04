@@ -26,7 +26,7 @@ public class Library {
         persons.add(l4);
 
 
-        Reader R0= new Reader("ab", "Read", "a", "a", "1", 1, "email1" );
+        Reader R0= new Reader("ab", "Read", "a", "a", "1", 1, "email11" );
         Reader R1= new Reader("aa", "Read", "b", "b", "2", 2, "email2" );
         Reader R2= new Reader("ac", "Read", "E", "e", "5", 6, "email5" );
         Reader R3= new Reader("ac", "Read", "D", "d", "4", 5, "email4" );
@@ -43,6 +43,7 @@ public class Library {
         for (int i = 0; i< persons.size(); i++){
             if (persons.get(i).getEmail().equals(email) && persons.get(i).getPassword().equals(password)){
                 System.out.println("The person was found");
+                System.out.println(persons.get(i).getTYPE());
                 return persons.get(i).getTYPE();
             }
 
