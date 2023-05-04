@@ -21,7 +21,7 @@ abstract public class Person {
 
     public Person(String password, String type, String FIRSTNAME, String LASTNAME, String address, int cellPhone, String email) {
         this.password = password;
-        this.TYPE = type.charAt(0);
+        this.TYPE = type.toLowerCase().charAt(0);
         this.FIRSTNAME = FIRSTNAME;
         this.LASTNAME = LASTNAME;
         this.address = address;
