@@ -3,8 +3,9 @@ package classes;
 import java.util.ArrayList;
 
 public class Library {
-    static ArrayList<Person> persons  = new ArrayList<Person>();
-    static ArrayList<Book> books= new ArrayList<Book>();
+    public static ArrayList<Person> persons  = new ArrayList<Person>();
+    public static Person loggedIn;
+    public static  ArrayList<Book> books = new ArrayList<Book>();
     public Library() {
         books.add(new Book("book1","yehia"));
         books.add(new Book("book2","marwan"));
@@ -26,7 +27,7 @@ public class Library {
         persons.add(l4);
 
 
-        Reader R0= new Reader("ab", "Read", "a", "a", "1", 1, "email1" );
+        Reader R0= new Reader("ab", "Read", "a", "a", "1", 1, "email11" );
         Reader R1= new Reader("aa", "Read", "b", "b", "2", 2, "email2" );
         Reader R2= new Reader("ac", "Read", "E", "e", "5", 6, "email5" );
         Reader R3= new Reader("ac", "Read", "D", "d", "4", 5, "email4" );
@@ -39,16 +40,17 @@ public class Library {
 
     }
 
-    public char checkPassword(String email,String password){
+    public static Person checkPassword(String email,String password){
         for (int i = 0; i< persons.size(); i++){
             if (persons.get(i).getEmail().equals(email) && persons.get(i).getPassword().equals(password)){
                 System.out.println("The person was found");
-                return persons.get(i).getTYPE();
+                System.out.println(persons.get(i).getTYPE());
+                return persons.get(i);
             }
 
         }
         System.out.println("The person is not found");
-        return 'n';
+        return null;
     }
 
 }

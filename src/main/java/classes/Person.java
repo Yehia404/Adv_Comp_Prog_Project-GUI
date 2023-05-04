@@ -21,7 +21,7 @@ abstract public class Person {
 
     public Person(String password, String type, String FIRSTNAME, String LASTNAME, String address, int cellPhone, String email) {
         this.password = password;
-        this.TYPE = type.charAt(0);
+        this.TYPE = type.toLowerCase().charAt(0);
         this.FIRSTNAME = FIRSTNAME;
         this.LASTNAME = LASTNAME;
         this.address = address;
@@ -100,13 +100,13 @@ abstract public class Person {
         if (i >= 0) {
 
             if (Library.books.get(i).getIsBooked()) {
-                Library.books.get(i).queue.add(this);
+                Library.books.get(i).queue.add(Library.loggedIn);
                 System.out.println("You have been added to the queue!");
             } else {
                 Library.books.get(i).setIsBooked(true);
                 Library.books.get(i).setRentedDays();
                 System.out.println("You have successfully rented the book, You have three days to return this book!");
-                this.rentedBooks.add(Library.books.get(i));
+                Library.loggedIn.rentedBooks.add(Library.books.get(i));
             }
         } else {
             System.out.println("classes.Book was not found");

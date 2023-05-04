@@ -2,12 +2,13 @@ package classes;
 
 public class Librarian extends Person {
 
-    Librarian(String password, String TYPE, String FIRSTNAME, String LASTNAME, String address, int cellPhone, String email){
+    public Librarian(String password, String TYPE, String FIRSTNAME, String LASTNAME, String address, int cellPhone, String email){
         super(password, TYPE, FIRSTNAME, LASTNAME, address, cellPhone, email);
     }
 
     static public void addBook(Book book){
         Library.books.add(book);
+        System.out.println("book "+ book.getName()+ " was added to list");
 
     }
     static public void removeBook(String name){
@@ -24,6 +25,7 @@ public class Librarian extends Person {
     static public void addUser(Person person){
 
         Library.persons.add(person);
+        System.out.println("person with first name "+ person.getFIRSTNAME()+ " was added to list");
     }
 
     static public int searchMember(int id){
