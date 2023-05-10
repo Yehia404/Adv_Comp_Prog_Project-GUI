@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Library {
     public static ArrayList<Person> persons  = new ArrayList<Person>();
-    public static ArrayList<Book> books= new ArrayList<Book>();
+    public static Person loggedIn;
+    public static  ArrayList<Book> books = new ArrayList<Book>();
     public Library() {
         books.add(new Book("book1","yehia"));
         books.add(new Book("book2","marwan"));
@@ -39,17 +40,17 @@ public class Library {
 
     }
 
-    public static char checkPassword(String email,String password){
+    public static Person checkPassword(String email,String password){
         for (int i = 0; i< persons.size(); i++){
             if (persons.get(i).getEmail().equals(email) && persons.get(i).getPassword().equals(password)){
                 System.out.println("The person was found");
                 System.out.println(persons.get(i).getTYPE());
-                return persons.get(i).getTYPE();
+                return persons.get(i);
             }
 
         }
         System.out.println("The person is not found");
-        return 'n';
+        return null;
     }
 
 }

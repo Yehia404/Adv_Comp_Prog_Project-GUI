@@ -27,8 +27,8 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <TextField GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <TextField fx:id="bookNameField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <TextField fx:id="authorNameField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Label prefHeight="163.0" prefWidth="283.0" text="                Enter Book name : " GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font size="18.0" />
@@ -39,7 +39,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="232.0" text="Add Book" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onAction="#addBook" prefHeight="36.0" prefWidth="232.0" text="Add Book" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
       <Button alignment="CENTER" contentDisplay="TOP" layoutX="244.0" layoutY="441.0" mnemonicParsing="false" onAction="#switchToInitialLibrarian" prefHeight="34.0" prefWidth="233.0" text="Return to Mainpage" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
    </children>
 </GridPane>

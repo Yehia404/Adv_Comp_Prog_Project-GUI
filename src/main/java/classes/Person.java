@@ -100,13 +100,13 @@ abstract public class Person {
         if (i >= 0) {
 
             if (Library.books.get(i).getIsBooked()) {
-                Library.books.get(i).queue.add(this);
+                Library.books.get(i).queue.add(Library.loggedIn);
                 System.out.println("You have been added to the queue!");
             } else {
                 Library.books.get(i).setIsBooked(true);
                 Library.books.get(i).setRentedDays();
                 System.out.println("You have successfully rented the book, You have three days to return this book!");
-                this.rentedBooks.add(Library.books.get(i));
+                Library.loggedIn.rentedBooks.add(Library.books.get(i));
             }
         } else {
             System.out.println("classes.Book was not found");

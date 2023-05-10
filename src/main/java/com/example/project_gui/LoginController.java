@@ -1,6 +1,7 @@
 package com.example.project_gui;
 
 import classes.Library;
+import classes.Person;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,17 +64,16 @@ public class LoginController {
     }
 
 
-
-
     @FXML
     private void handleLogin() throws IOException {
 
         Email = usernameField.getText();
         Password = passwordField.getText();
 
-        t = Library.checkPassword(Email, Password);
+        t = Library.checkPassword(Email, Password).getTYPE();
+        Library.loggedIn = Library.checkPassword(Email, Password);
         System.out.println(t);
         switchToNextPage(e);
-
     }
 }
+
