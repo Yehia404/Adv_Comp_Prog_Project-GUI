@@ -8,7 +8,7 @@ public class Book {
     private final String author;
     private boolean isBooked = false;
 
-    ArrayList<Person> queue= new ArrayList<Person>();
+    public ArrayList<Person> queue= new ArrayList<Person>();
 
     public Book(String name, String author) {
         this.name = name;

@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.project_gui.HelloController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgba(240,205,100,0.42);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_gui.RemoveFromQueueController">
+   <children>
+       <GridPane prefHeight="400.0" prefWidth="600.0">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <Button fx:id="removeBtn" alignment="CENTER" mnemonicParsing="false" onAction="#Remove" prefHeight="30.0" prefWidth="239.0" text="Remove" textAlignment="CENTER" GridPane.rowIndex="4" />
+           <TextField fx:id="User" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+           <Label alignment="CENTER" contentDisplay="TOP" prefHeight="17.0" prefWidth="206.0" text="Remove From Queue" textAlignment="CENTER" GridPane.columnIndex="1" />
+           <Label alignment="CENTER" prefHeight="17.0" prefWidth="213.0" text="User ID" GridPane.rowIndex="2" />
+           <Label alignment="CENTER" prefHeight="17.0" prefWidth="234.0" text="Book" GridPane.rowIndex="3" />
+           <TextField fx:id="bookName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+           <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+           <Label fx:id="toplabel" alignment="CENTER" prefHeight="57.0" prefWidth="205.0" text="Search For A Book And User To Remove From Queue" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+           <Button fx:id="returnToMain" mnemonicParsing="false" onAction="#switchToInitialLibrarian" prefHeight="30.0" prefWidth="200.0" text="Return To Main Page" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+       </GridPane>
+   </children>
 </AnchorPane>
