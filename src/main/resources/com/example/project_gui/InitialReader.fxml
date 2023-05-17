@@ -29,5 +29,6 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Button fx:id="logOutBtn" alignment="CENTER" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="41.0" prefWidth="200.0" text="Log Out" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
 </GridPane>
