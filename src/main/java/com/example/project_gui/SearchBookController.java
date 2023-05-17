@@ -25,6 +25,8 @@ public class SearchBookController {
     private TextField bookName;
     @FXML
     private Button searchBtn;
+    @FXML
+    private Button returnBtn;
 
     public void searchBook(ActionEvent event) throws IOException {
 
@@ -40,11 +42,23 @@ public class SearchBookController {
         scene=new Scene(root);
         stage.setScene(scene);
     }
-    public void switchToInitialLibrarian(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("InitialLibrarian.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void switchToNextPage(ActionEvent event) throws IOException {
+        Parent root;
+        if (Library.loggedIn.getTYPE() == 'l') {
+            root = FXMLLoader.load(getClass().getResource("InitialLibrarian.fxml"));
+            stage = (Stage) returnBtn.getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } else if (Library.loggedIn.getTYPE() == 'r') {
+            root = FXMLLoader.load(getClass().getResource("InitialReader.fxml"));
+            stage = (Stage) returnBtn.getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
     }
+
+
 }

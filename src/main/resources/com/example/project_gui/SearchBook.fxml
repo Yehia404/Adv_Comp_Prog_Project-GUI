@@ -46,6 +46,6 @@
                 <Insets top="-90.0" />
             </GridPane.margin>
         </Label>
-        <Button mnemonicParsing="false" onAction="#switchToInitialLibrarian" text="Return To Main Page" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <Button fx:id="returnBtn" mnemonicParsing="false" onAction="#switchToNextPage" text="Return To Main Page" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
     </children>
 </GridPane>
