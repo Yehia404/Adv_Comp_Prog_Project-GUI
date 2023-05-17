@@ -8,9 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -43,25 +41,26 @@ public class LoginController {
     private char t;
 
     public void switchToNextPage(ActionEvent event) throws IOException {
-
         Parent root;
         System.out.println(t);
-        if (t=='l'){
+        if (t == 'l') {
             root = FXMLLoader.load(getClass().getResource("InitialLibrarian.fxml"));
-            stage = (Stage)loginButton.getScene().getWindow();
+            stage = (Stage) loginButton.getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        else if(t=='r') {
-           root= FXMLLoader.load(getClass().getResource("InitialReader.fxml"));
-            stage = (Stage)loginButton.getScene().getWindow();
+        } else if (t == 'r') {
+            root = FXMLLoader.load(getClass().getResource("InitialReader.fxml"));
+            stage = (Stage) loginButton.getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid credentials!", ButtonType.OK);
+            alert.showAndWait();
         }
-
     }
+
 
 
     @FXML
@@ -69,8 +68,10 @@ public class LoginController {
 
         Email = usernameField.getText();
         Password = passwordField.getText();
-
-        t = Library.checkPassword(Email, Password).getTYPE();
+        try {
+            t = Library.checkPassword(Email, Password).getTYPE();
+        }
+        catch (NullPointerException e){}
         Library.loggedIn = Library.checkPassword(Email, Password);
         System.out.println(t);
         switchToNextPage(e);
