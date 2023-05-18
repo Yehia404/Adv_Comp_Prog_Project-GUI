@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Library {
     public static ArrayList<Person> persons  = new ArrayList<Person>();
-    public static Person loggedIn;
+    public static Person loggedIn = new Librarian("pass", "Lib", "b", "b", "2", 2, "email2@librarian.com" ); ;
     public static  ArrayList<Book> books = new ArrayList<Book>();
     public Library() {
         books.add(new Book("book1","yehia"));
@@ -13,10 +13,8 @@ public class Library {
         books.add(new Book("book4","kassab"));
         books.add(new Book("book5","omar"));
 
-
-
         Librarian l0= new Librarian("l", "Lib", "a", "a", "1", 1, "l" );
-        Librarian l1= new Librarian("pass", "Lib", "b", "b", "2", 2, "email2@librarian.com" );
+        Librarian l1= new Librarian("pass", "Lib", "b", "b", "2", 2, "emaillol@librarian.com" );
         Librarian l4= new Librarian("pass", "Lib", "E", "e", "5", 6, "email5@librarian.com" );
         Librarian l3= new Librarian("pass", "Lib", "D", "d", "4", 5, "email4@librarian.com" );
         Librarian l2= new Librarian("pass", "Lib", "c", "c", "3", 4, "email3@librarian.com" );
@@ -25,7 +23,6 @@ public class Library {
         persons.add(l2);
         persons.add(l3);
         persons.add(l4);
-
 
         Reader R0= new Reader("r", "Read", "a", "a", "1", 1, "r" );
         Reader R1= new Reader("pass", "Read", "b", "b", "2", 2, "email2@reader.com" );
@@ -37,6 +34,8 @@ public class Library {
         persons.add(R2);
         persons.add(R3);
         persons.add(R4);
+
+        R0.rentBook("book1");
 
     }
 

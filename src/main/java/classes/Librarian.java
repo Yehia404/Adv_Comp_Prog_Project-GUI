@@ -72,12 +72,11 @@ public class Librarian extends Person {
 
         int bookIndex = searchBook(name);
 
-
         if (bookIndex >= 0){
             for (int i = 0; i < Library.books.get(bookIndex).queue.size(); i++){
-                if (id == Library.books.get(bookIndex).queue.get(i).getID()){
+                if (id == Library.books.get(bookIndex).queue.get(i).getID()-1){
                     Library.books.get(bookIndex).queue.remove(i);
-                    System.out.println("user with id"+id+" was removed from book "+name+ " queue");
+                    System.out.println("user with id"+(id+1)+" was removed from book "+name+ " queue");
                     return;
 
                 }

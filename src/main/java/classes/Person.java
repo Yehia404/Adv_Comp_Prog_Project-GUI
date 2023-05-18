@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 abstract public class Person {
     private int ID;
-
     static int personCounter = 0;
     private String password;
     private final char TYPE;
@@ -101,15 +100,15 @@ abstract public class Person {
 
             if (Library.books.get(i).getIsBooked()) {
                 Library.books.get(i).queue.add(Library.loggedIn);
-                System.out.println("You have been added to the queue!");
+                // System.out.println("You have been added to the queue!");
             } else {
                 Library.books.get(i).setIsBooked(true);
                 Library.books.get(i).setRentedDays();
-                System.out.println("You have successfully rented the book, You have three days to return this book!");
+                // System.out.println("You have successfully rented the book, You have three days to return this book!");
                 Library.loggedIn.rentedBooks.add(Library.books.get(i));
             }
         } else {
-            System.out.println("classes.Book was not found");
+            // System.out.println("classes.Book was not found");
         }
     }
 
