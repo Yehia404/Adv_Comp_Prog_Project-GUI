@@ -33,6 +33,12 @@ public class RemoveFromQueueController {
         SearchUserBook();
         if (Userid >= 0 && book >=0) {Librarian.removeUserFromQueue(Userid, bookName.getText());}}
 
+
+    public void Add(ActionEvent event) throws IOException {
+        Userid = Librarian.searchMember(Integer.parseInt(User.getText()));
+        if (Userid >= 0 && book >=0) {Librarian.forceUserToQueue(bookName.getText(),Userid);}
+    }
+
     public void switchToInitialLibrarian(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("InitialLibrarian.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

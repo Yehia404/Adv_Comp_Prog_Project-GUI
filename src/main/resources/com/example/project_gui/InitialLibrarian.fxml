@@ -20,7 +20,7 @@
   </rowConstraints>
    <children>
       <Button mnemonicParsing="false" onAction="#switchToSearchUser" prefHeight="93.0" prefWidth="270.0" text="Search User (Remove, Block)" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Button mnemonicParsing="false" onAction="#switchToRemoveFromQueue" prefHeight="93.0" prefWidth="270.0" text="Remove User from book queue list" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onAction="#switchToRemoveFromQueue" prefHeight="93.0" prefWidth="270.0" text="Book Queue List" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Button mnemonicParsing="false" onAction="#switchToAddBook" prefHeight="93.0" prefWidth="270.0" text="Add Book" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <Button mnemonicParsing="false" onAction="#switchToSearchBook" prefHeight="93.0" prefWidth="270.0" text="Search Book (Rent, Remove)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Button mnemonicParsing="false" onAction="#switchToAddUser" prefHeight="93.0" prefWidth="199.0" text="Add User" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />

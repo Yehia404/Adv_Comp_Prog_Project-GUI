@@ -63,10 +63,39 @@ public class Librarian extends Person {
         }else {
             System.out.println("User was not found");
         }
-
-
-
     }
+
+    public static void forceUserToQueue(String name, int id) {
+        int i = searchBook(name);
+        int j= searchMember(id);
+        if (i >= 0) {
+
+            if (Library.books.get(i).getIsBooked()) {
+                Library.books.get(i).queue.add(Library.persons.get(j));
+                 System.out.println("You have been added to the queue!");
+            } else {
+                Library.books.get(i).setIsBooked(true);
+                Library.books.get(i).setRentedDays();
+                 System.out.println("You have successfully rented the book, You have three days to return this book!");
+                Library.persons.get(j).rentedBooks.add(Library.books.get(i));
+            }
+        } else {
+             System.out.println("classes.Book was not found");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     static public void removeUserFromQueue(int id, String name){
 
@@ -74,7 +103,7 @@ public class Librarian extends Person {
 
         if (bookIndex >= 0){
             for (int i = 0; i < Library.books.get(bookIndex).queue.size(); i++){
-                if (id == Library.books.get(bookIndex).queue.get(i).getID()-1){
+                if (id == Library.books.get(bookIndex).queue.get(i).getID()){
                     Library.books.get(bookIndex).queue.remove(i);
                     System.out.println("user with id"+(id+1)+" was removed from book "+name+ " queue");
                     return;

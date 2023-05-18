@@ -33,6 +33,7 @@ public class SearchBookController2 {
             bookedLabel.setText("Booked: True");
             Library.loggedIn.rentBook(bookLabel.getText().substring(11));
         } else{Library.loggedIn.rentBook(bookLabel.getText().substring(11));}}
+
     public void switchToNextPage(ActionEvent event) throws IOException {
         Parent root;
         if (Library.loggedIn.getTYPE() == 'l') {
