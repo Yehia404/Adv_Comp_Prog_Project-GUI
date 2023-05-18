@@ -21,7 +21,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#Search" text="Search" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#Search" prefHeight="26.0" prefWidth="226.0" text="Search" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets />
          </GridPane.margin></Button>
@@ -46,6 +46,7 @@
             <Insets top="-90.0" />
          </GridPane.margin>
       </Label>
-      <Button mnemonicParsing="false" onAction="#switchToInitialLibrarian" text="Return To Main Page" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onAction="#switchToInitialLibrarian" prefHeight="26.0" prefWidth="219.0" text="Return To Main Page" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Button fx:id="removeBtn" layoutX="247.0" layoutY="331.0" mnemonicParsing="false" onAction="#removeUser" prefHeight="26.0" prefWidth="214.0" text="Remove User" GridPane.rowIndex="2" />
    </children>
 </GridPane>

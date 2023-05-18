@@ -19,6 +19,7 @@ public class SearchController {
     @FXML private Parent root;
     @FXML private TextField idTextField;
     @FXML private Button searchBtn;private int id;
+    @FXML private Button removeBtn;
     public void Search(ActionEvent event) throws IOException {
         id = Integer.parseInt(idTextField.getText());
         int i= Librarian.searchMember(id);
@@ -33,5 +34,9 @@ public class SearchController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    public void removeUser(ActionEvent e) throws IOException{
+        id = Integer.parseInt(idTextField.getText());
+        Library.persons.remove(id);
     }
 }
