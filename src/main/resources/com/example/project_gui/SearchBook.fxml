@@ -25,7 +25,7 @@
             <GridPane.margin>
                 <Insets />
             </GridPane.margin></Button>
-        <Label text="Search For a User" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+        <Label text="Search For a Book" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
             <font>
                 <Font size="20.0" />
             </font>

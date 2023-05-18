@@ -15,7 +15,7 @@ public class Library {
 
 
 
-        Librarian l0= new Librarian("pass", "Lib", "a", "a", "1", 1, "email1@librarian.com" );
+        Librarian l0= new Librarian("l", "Lib", "a", "a", "1", 1, "l" );
         Librarian l1= new Librarian("pass", "Lib", "b", "b", "2", 2, "email2@librarian.com" );
         Librarian l4= new Librarian("pass", "Lib", "E", "e", "5", 6, "email5@librarian.com" );
         Librarian l3= new Librarian("pass", "Lib", "D", "d", "4", 5, "email4@librarian.com" );
@@ -27,7 +27,7 @@ public class Library {
         persons.add(l4);
 
 
-        Reader R0= new Reader("pass", "Read", "a", "a", "1", 1, "email1@reader.com" );
+        Reader R0= new Reader("r", "Read", "a", "a", "1", 1, "r" );
         Reader R1= new Reader("pass", "Read", "b", "b", "2", 2, "email2@reader.com" );
         Reader R2= new Reader("pass", "Read", "E", "e", "5", 6, "email5@reader.com" );
         Reader R3= new Reader("pass", "Read", "D", "d", "4", 5, "email4@reader.com" );

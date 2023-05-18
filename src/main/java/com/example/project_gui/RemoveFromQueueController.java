@@ -1,8 +1,6 @@
 package com.example.project_gui;
 
-import classes.Book;
 import classes.Librarian;
-import classes.Library;
 import classes.Person;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,65 +16,29 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class RemoveFromQueueController {
-
-    @FXML
-    private Stage stage;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Label toplabel;
-    @FXML
-    private TextField bookName;
-    @FXML
-    private TextField User;
-    @FXML
-    private Button removeBtn;
-    @FXML
-    private Button returnToMain;
-
-    private int Userid;
-    private int booook;
-
-
-
-
+    @FXML private Stage stage;
+    @FXML private Scene scene;
+    @FXML private Label toplabel;
+    @FXML private TextField bookName;
+    @FXML private TextField User;
+    @FXML private Button removeBtn;
+    @FXML private Button returnToMain;
+    private int Userid;private int book;
     public void SearchUserBook() {
         Userid = Librarian.searchMember(Integer.parseInt(User.getText()));
-        booook = Person.searchBook(bookName.getText());
-
+        book = Person.searchBook(bookName.getText());
         if (Librarian.searchMember(Userid) == -1) {
-            toplabel.setText("User not found");
-        } else if (booook == -1) {
-            toplabel.setText("Book not found");
-        }
-    }
-
-
-
-
-
+            toplabel.setText("User not found");} else if (book == -1) {toplabel.setText("Book not found");}}
     public void Remove(ActionEvent event) throws IOException {
         SearchUserBook();
-        if (Userid >= 0 && booook >=0) {
-
-            Librarian.removeUserFromQueue(Userid, bookName.getText());
-
-
-
-        }
-
-
-
-    }
+        if (Userid >= 0 && book >=0) {Librarian.removeUserFromQueue(Userid, bookName.getText());}}
 
     public void switchToInitialLibrarian(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("InitialLibrarian.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();
-    }
-}
+        stage.show();}}
 
 
 

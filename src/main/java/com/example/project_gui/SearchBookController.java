@@ -14,34 +14,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SearchBookController {
-
-    @FXML
-    private Stage stage;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Parent root;
-    @FXML
-    private TextField bookName;
-    @FXML
-    private Button searchBtn;
-    @FXML
-    private Button returnBtn;
-
+    @FXML private Stage stage;
+    @FXML private Scene scene;
+    @FXML private Parent root;
+    @FXML private TextField bookName;
+    @FXML private Button searchBtn;
+    @FXML private Button returnBtn;
     public void searchBook(ActionEvent event) throws IOException {
-
         int i= Person.searchBook(bookName.getText());
-
         FXMLLoader loader= new FXMLLoader (getClass().getResource("SearchBook2.fxml"));
         root=loader.load();
         SearchBookController2 searchBookController2 = loader.getController();
         searchBookController2.displayData(Library.books.get(i).getName(),Library.books.get(i).getAuthor(),Library.books.get(i).getIsBooked());
-
-
         stage = (Stage)searchBtn.getScene().getWindow();
-        scene=new Scene(root);
-        stage.setScene(scene);
-    }
+        scene=new Scene(root);stage.setScene(scene);}
     public void switchToNextPage(ActionEvent event) throws IOException {
         Parent root;
         if (Library.loggedIn.getTYPE() == 'l') {
@@ -54,11 +40,4 @@ public class SearchBookController {
             root = FXMLLoader.load(getClass().getResource("InitialReader.fxml"));
             stage = (Stage) returnBtn.getScene().getWindow();
             scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
-
-    }
-
-
-}
+            stage.setScene(scene);stage.show();}}}
