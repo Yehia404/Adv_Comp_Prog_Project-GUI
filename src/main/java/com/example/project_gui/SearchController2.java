@@ -18,8 +18,15 @@ public class SearchController2 {
     @FXML Label firstLabel;
     @FXML Label lastLabel;
     @FXML Label emailLabel;
-    public void displayData(String firstName, String lastName, String Email){
-    firstLabel.setText("First Name: "+ firstName);lastLabel.setText("Last Name: "+ lastName);emailLabel.setText("Email: "+ Email);}
+    @FXML Label isBlockedLabel;
+
+    public void displayData(String firstName, String lastName, String Email,boolean Blocked){
+    firstLabel.setText("First Name: "+ firstName);
+    lastLabel.setText("Last Name: "+ lastName);
+    emailLabel.setText("Email: "+ Email);
+    isBlockedLabel.setText("Blocked: "+ Blocked);
+    }
+
     public void switchToSearchUser(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SearchUser.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

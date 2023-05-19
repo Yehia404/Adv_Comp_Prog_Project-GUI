@@ -25,7 +25,7 @@ public class SearchController {
         int i= Librarian.searchMember(id);
         FXMLLoader loader= new FXMLLoader (getClass().getResource("SearchUser2.fxml"));
         root=loader.load();SearchController2 searchController2 = loader.getController();
-        searchController2.displayData(Library.persons.get(i).getFIRSTNAME(),Library.persons.get(i).getLASTNAME(),Library.persons.get(i).getEmail());
+        searchController2.displayData(Library.persons.get(i).getFIRSTNAME(),Library.persons.get(i).getLASTNAME(),Library.persons.get(i).getEmail(),Library.persons.get(i).isBlocked());
         stage = (Stage)searchBtn.getScene().getWindow();
         scene=new Scene(root);stage.setScene(scene);}
     public void switchToInitialLibrarian(ActionEvent event) throws IOException {
@@ -38,5 +38,11 @@ public class SearchController {
     public void removeUser(ActionEvent e) throws IOException{
         id = Integer.parseInt(idTextField.getText());
         Library.persons.remove(id);
+    }
+
+    public void Block(){
+        id = Integer.parseInt(idTextField.getText());
+        int i= Librarian.searchMember(id);
+        Library.persons.get(i).setBlocked(true);
     }
 }

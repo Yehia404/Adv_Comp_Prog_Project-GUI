@@ -54,5 +54,13 @@
       </Label>
       <Button mnemonicParsing="false" onAction="#switchToSearchUser" text="Search For Another User" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <Button mnemonicParsing="false" onAction="#switchToInitialLibrarian" text="Return To Main Page" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label fx:id="isBlockedLabel" text="Blocked:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="100.0" />
+         </GridPane.margin>
+      </Label>
    </children>
 </GridPane>
